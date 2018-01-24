@@ -1,15 +1,17 @@
 import test from 'ava'
-import { spy } from 'sinon'
+import { stub } from 'sinon'
 import { expect } from 'chai'
 import api from './api'
+import testUsers from '../fixtures/test-users'
 // subject under test
 import getUsers from './getUsers'
 
 require('../helpers/chai-setup')
 
 test('gets users from the api', t => {
-  spy(api, 'get')
+  stub(api, 'get').returns(testUsers)
   getUsers()
-  expect(api.get).to.be.calledWith('users')
+  expect(api.get).to.have.been.calledWith('users')
+  expect(getUsers()).to.deep.equal(testUsers)
   t.pass()
 })
