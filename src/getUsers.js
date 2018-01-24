@@ -1,3 +1,7 @@
 import api from './api'
 
-export default () => api.get('users')
+export default () => {
+  const users = api.get('users')
+  if (!users) return []
+  return users
+}
