@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "semi": ["error", "never"],
+    "object-curly-newline": "off",
+    "arrow-parens": "off",
+    "import/no-extraneous-dependencies": "off"
+  },
+  "plugins": [
+    "babel"
+  ]
+}
