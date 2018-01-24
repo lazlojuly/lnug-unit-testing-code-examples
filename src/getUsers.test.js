@@ -22,3 +22,10 @@ test('returns empty array when api result is falsy', t => {
     t.deepEqual(getUsers(), [])
   })
 })
+
+test('filters out users without valid id', t => {
+  const invalidUser = { firstName: 'Bart', lastName: 'Simpson', id: null }
+  api.get = td.function()
+  td.when(api.get('users')).thenReturn([...testUsers, invalidUser])
+  t.deepEqual(getUsers(), testUsers)
+})
