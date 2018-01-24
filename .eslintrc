@@ -6,7 +6,8 @@
     "semi": ["error", "never"],
     "object-curly-newline": "off",
     "arrow-parens": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "no-plusplus": "off"
   },
   "plugins": [
     "babel"
